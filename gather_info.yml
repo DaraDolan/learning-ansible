@@ -1,0 +1,14 @@
+---
+- name: Gather Information from Local Machine
+  hosts: local
+  gather_facts: yes
+  tasks:
+    - name: Print Operating System
+      debug:
+        msg: "The operating system is {{ ansible_distribution }} {{ ansible_distribution_version }}"
+    - name: Print Architecture
+      debug:
+        msg: "The system architecture is {{ ansible_architecture }}"
+    - name: Print IP Addresses
+      debug:
+        msg: "The IP addresses are {{ ansible_all_ipv4_addresses }}"
